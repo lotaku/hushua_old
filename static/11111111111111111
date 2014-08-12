@@ -1,0 +1,14 @@
+Searching 877 files for "googleapis.com"
+
+/home/lotaku/app/envs/hushua/hushua/static/blank_.html:
+   40  
+   41  		<!-- GOOGLE FONT -->
+   42: 		<link rel="stylesheet" href="http://fonts.useso.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+   43  
+   44  	</head>
+   ..
+  512  
+  513  		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+  514: 		<script src="http://ajax.useso.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  515  		<script>
+  516  			if (!window.jQuery) {

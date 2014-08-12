@@ -1,0 +1,20 @@
+{
+	"folders":
+	[
+		{
+			"path": "/home/lotaku/app/envs/hushua/hushua"
+		}
+	],
+	// #---------Use python manage.py ---------------#
+	"build_systems":
+	[
+	    {
+	        "env": {"PYTHONPATH":"/home/lotaku/app/envs/hushua/hushua",
+	        			"DJANGO_SETTINGS_MODULE":"hushua.settings"},
+	        "path":"/home/lotaku/app/envs/hushua/bin:$PATH",
+	        "name": "Run virtualenv hushua",
+	        "working_dir": "/home/lotaku/app/envs/hushua/hushua",
+	        "cmd": ["python","-u", "$file"]
+	    }
+	]
+}

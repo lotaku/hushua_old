@@ -1,0 +1,6 @@
+<form action="{% url 'users_manage:user_add'  %}" method="post">{% csrf_token %}
+    {% for user in users %}
+    <p>{{ user.name}}</p>
+    {% endfor%}
+<input type="submit" value="Send message" />
+</form>

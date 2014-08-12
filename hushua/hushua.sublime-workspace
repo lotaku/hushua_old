@@ -1,0 +1,557 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"page",
+				"page_obj"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/lotaku/app/envs/hushua/hushua/users_manage/urls.py",
+			"settings":
+			{
+				"buffer_size": 414,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Run virtualenv hushua",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pacin",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: lotaku"
+			],
+			[
+				"pain",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ne",
+				"Snippet: New Class"
+			],
+			[
+				"setm",
+				"Set Syntax: Markdown"
+			],
+			[
+				"set md",
+				"Set Syntax: Markdown"
+			],
+			[
+				"inpu",
+				"InputHelper"
+			],
+			[
+				"ut",
+				"ConvertToUTF8: Reload with Encoding"
+			],
+			[
+				"pcin",
+				"Package Control: Install Package"
+			],
+			[
+				"set py",
+				"Set Syntax: Python"
+			],
+			[
+				"pac in",
+				"Package Control: Install Package"
+			],
+			[
+				"pack rm",
+				"Package Control: Remove Package"
+			],
+			[
+				"pin",
+				"Package Control: Install Package"
+			],
+			[
+				"pi",
+				"Package Control: Install Package"
+			],
+			[
+				"vim",
+				"Set Syntax: VimL"
+			],
+			[
+				"setpy",
+				"Set Syntax: Python"
+			],
+			[
+				"css",
+				"Run CSScomb JS"
+			],
+			[
+				"packin",
+				"Package Control: Install Package"
+			],
+			[
+				"term",
+				"Preferences: Terminal Settings – Default"
+			],
+			[
+				"pack in",
+				"Package Control: Install Package"
+			],
+			[
+				"pack rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"gitp",
+				"Github: Plugin Settings"
+			],
+			[
+				"pins",
+				"Package Control: Install Package"
+			],
+			[
+				"pci",
+				"Package Control: Install Package"
+			],
+			[
+				"fj",
+				"Format: Javascript"
+			],
+			[
+				"pcinp",
+				"Package Control: Install Package"
+			],
+			[
+				"paccin",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 174.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": true,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/lotaku/app/envs/hushua/hushua/hushua/settings.py",
+		"/home/lotaku/app/envs/hushua/hushua/hushua/urls.py",
+		"/home/lotaku/app/envs/hushua/hushua/users_manage/views.py",
+		"/home/lotaku/app/envs/hushua/hushua/users_manage/models.py",
+		"/home/lotaku/app/envs/hushua/hushua/users_manage/forms.py",
+		"/home/lotaku/app/envs/hushua/hushua/templates/users_manage/signin.html",
+		"/home/lotaku/app/envs/hushua/hushua/templates/users_manage/user_add.html",
+		"/home/lotaku/app/envs/hushua/hushua/templates/users_manage/2.html",
+		"/home/lotaku/app/envs/hushua/hushua/static/js/notification/SmartNotification.js",
+		"/home/lotaku/app/envs/hushua/hushua/templates/users_manage/dashboard.html",
+		"/home/lotaku/app/envs/hushua/hushua/static/js/notification/SmartNotification.min.js",
+		"/home/lotaku/app/envs/hushua/hushua/users_manage/urls.py",
+		"/home/lotaku/app/envs/hushua/hushua/users_manage/1.py",
+		"/home/lotaku/app/Sublime Text 2/Data/Packages/Default/Preferences.sublime-settings",
+		"/home/lotaku/app/Sublime Text 2/Data/Packages/User/Preferences.sublime-settings",
+		"/home/lotaku/app/Sublime Text 2/Data/Packages/User/Default (Linux).sublime-keymap",
+		"/home/lotaku/app/envs/hushua/hushua/users_manage/__init__.py",
+		"/home/lotaku/app/envs/hushua/hushua/polls/__init__.py",
+		"/home/lotaku/app/envs/hushua/hushua/polls/models.py",
+		"/home/lotaku/app/envs/hushua/hushua/django-admin.py",
+		"/home/lotaku/app/Sublime Text 2/Data/snippet/utf8.sublime-snippet",
+		"/home/lotaku/app/Sublime Text 2/Data/Packages/User/hello.sublime-snippet",
+		"/home/lotaku/app/envs/hushua/hushua/templates/users_manage/user_all.html",
+		"/home/lotaku/app/envs/hushua/hushua/templates/users_manage/thanks.html",
+		"/home/lotaku/app/envs/hushua/hushua/templates/users_manage/user_tasks.html",
+		"/home/lotaku/app/envs/hushua/hushua/hs_users/forms.py",
+		"/home/lotaku/app/envs/hushua/hushua/hs_users/views.py",
+		"/home/lotaku/app/envs/hushua/hushua/hs_users/models.py",
+		"/home/lotaku/app/envs/hushua/hushua/users_manage/admin.py",
+		"/home/lotaku/app/envs/hushua/hushua/templates/hu_users/user_add.html",
+		"/home/lotaku/app/envs/hushua/hushua/templates/hu_users/thanks.html",
+		"/home/lotaku/app/envs/hushua/hushua/hs_users/urls.py",
+		"/home/lotaku/app/envs/hushua/hushua/polls/urls.py",
+		"/home/lotaku/app/envs/hushua/hushua/polls/views.py",
+		"/home/lotaku/app/envs/hushua/hushua/templates/admin/index.html",
+		"/home/lotaku/app/envs/hushua/hushua/hs_users/admin.py",
+		"/home/lotaku/app/envs/hushua/hushua/templates/admin/base_site.html",
+		"/home/lotaku/app/envs/hushua/hushua/templates/admin/templates/admin/base_site.html",
+		"/home/lotaku/app/envs/hushua/hushua/HSusers/models.py",
+		"/home/lotaku/app/envs/hushua/hushua/polls/admin.py",
+		"/home/lotaku/app/envs/hushua/hushua/myusers/models.py",
+		"/home/lotaku/app/envs/hushua/hushua/myusers/admin.py",
+		"/home/lotaku/app/envs/hushua/hushua/test1/models.py",
+		"/home/lotaku/app/envs/hushua/hushua/test1/admin.py",
+		"/home/lotaku/app/envs/hushua/hushua/HSusers/admin.py",
+		"/home/lotaku/app/envs/hushua/hushua/hushua/1.py",
+		"/home/lotaku/app/envs/hushua/hushua/users/models.py",
+		"/home/lotaku/app/envs/hushua/hushua/users/admin.py",
+		"/home/lotaku/app/envs/hushua/hushua/manage.py",
+		"/home/lotaku/app/envs/hushua/hushua/hushua/hushua.sublime-project",
+		"/home/lotaku/app/envs/hushua/bin/activate",
+		"/home/lotaku/app/envs/hushua/hushua/2.py",
+		"/home/lotaku/app/envs/hushua/hushua/db.sqlite3",
+		"/home/lotaku/app/Sublime Text 2/Data/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/lotaku/app/envs/hushua/local/lib/python2.7/site-packages/django/conf/__init__.py",
+		"/home/lotaku/app/envs/hushua/local/lib/python2.7/site-packages/django/db/utils.py",
+		"/home/lotaku/桌面/xxxxxx/.bashrc",
+		"/home/lotaku/app/myblog/content/hello.md",
+		"/home/lotaku/app/myblog/publishconf.py",
+		"/home/lotaku/app/myblog/pelicanconf.py",
+		"/home/lotaku/.ssh/id_rsa.pub",
+		"/home/lotaku/app/Sublime Text 2/Data/Packages/User/lotaku.sublime-completions",
+		"/home/lotaku/app/Sublime Text 2/Data/Packages/User/lotaku2.sublime-completions",
+		"/home/lotaku/app/Sublime Text 2/Data/Packages/User/add_date.py",
+		"/home/lotaku/app/Sublime Text 2/Data/Packages/User/lotaku.sublime-snippet",
+		"/usr/share/applications/Sublime Text.desktop",
+		"/home/lotaku/桌面/sublime_imfix.c",
+		"/usr/share/applications/Sublime Text Copy!.desktop",
+		"/usr/share/applications/sublime_text (副本).desktop",
+		"/home/lotaku/app/笔记.md",
+		"/E/learn/python/shorst.py",
+		"/C/Program Files (x86)/Sublime Text 2/Data/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Program Files (x86)/Sublime Text 2/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Program Files (x86)/Sublime Text 2/Data/Packages/Vintage/Default (Windows).sublime-keymap",
+		"/C/Program Files (x86)/Sublime Text 2/Data/Packages/User/Preferences.sublime-settings",
+		"/C/Program Files (x86)/Sublime Text 2/Data/Packages/Default/Preferences.sublime-settings",
+		"/E/learn/python/1.py",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/Z/org/views.py",
+		"/Z/templates/html/org/tags/users_frame.html",
+		"/Z/org/org_utils.py",
+		"/Z/org/urls.py",
+		"/Z/templates/html/org/org_index.html",
+		"/Z/core/db/dbsettings.json",
+		"/Z/templates/html/identities/tags/user_list.html",
+		"/Z/org/__init__.py",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Github Tools.sublime-settings",
+		"/E/learn/jquery.min.js",
+		"/E/learn/python/try.py",
+		"/E/learn/python/1.md"
+	],
+	"find":
+	{
+		"height": 54.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ajax",
+			"sound",
+			"sound/",
+			"img/",
+			"/img/",
+			"js/plugin/pace/",
+			"/js/plugin/pace/",
+			"<script src=\"js",
+			"type=\"text/css\" media=\"screen\" href=\"",
+			"RequestContext",
+			"\"",
+			" TEMPLATE_CONTEXT_PROCESSORS",
+			"collectstatic",
+			"STATIC",
+			"form",
+			"’",
+			"’index’",
+			"’’",
+			"BASE_DIR",
+			"INSTALLED_APPS",
+			"HH",
+			"HH_users",
+			"Hu_users",
+			"Test1",
+			"test1",
+			"Users_",
+			"Left",
+			"django.contrib.auth.context_processors.auth",
+			"import",
+			"port",
+			"porr",
+			"MIDDLEWARE_CLASSES",
+			"TEMPLATE_CONTEXT_PROCESSORS",
+			"django.contrib.messages.context_processors.messages",
+			"gou",
+			"abc ",
+			"abc",
+			"vintage",
+			"pageNumber",
+			"^org",
+			"{% url",
+			"team_manage",
+			"check_org",
+			"abc",
+			"a"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"<script src=\"/static/js",
+			"type=\"text/css\" media=\"screen\" href=\"/static/",
+			"'"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/lotaku/app/envs/hushua/hushua/users_manage/urls.py",
+					"settings":
+					{
+						"buffer_size": 414,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								414,
+								414
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 290.0
+	},
+	"replace":
+	{
+		"height": 179.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"smartnof",
+				"static/js/notification/SmartNotification.min.js"
+			],
+			[
+				"smartno",
+				"static/js/notification/SmartNotification.js"
+			],
+			[
+				"2.",
+				"templates/users_manage/2.html"
+			],
+			[
+				"sin",
+				"templates/users_manage/signin.html"
+			],
+			[
+				"setting",
+				"hushua/settings.py"
+			],
+			[
+				"sett",
+				"hushua/settings.py"
+			],
+			[
+				"adminindx",
+				"templates/admin/index.html"
+			],
+			[
+				"testadmin",
+				"test1/admin.py"
+			],
+			[
+				"test1m",
+				"test1/models.py"
+			],
+			[
+				"admin",
+				"users/admin.py"
+			],
+			[
+				"ma",
+				"manage.py"
+			],
+			[
+				"hus",
+				"hushua/hushua.sublime-project"
+			],
+			[
+				"admi",
+				"polls/admin.py"
+			],
+			[
+				"hu",
+				"hushua/hushua.sublime-project"
+			],
+			[
+				"hushua",
+				"hushua/hushua.sublime-project"
+			],
+			[
+				"1.",
+				"hushua/1.py"
+			],
+			[
+				"usermo",
+				"users/models.py"
+			],
+			[
+				"",
+				"db.sqlite3"
+			],
+			[
+				"s",
+				"hushua/settings.py"
+			],
+			[
+				"poll",
+				"polls/models.py"
+			],
+			[
+				"se",
+				"settings.py"
+			],
+			[
+				"dbs",
+				"core/db/dbsettings.json"
+			],
+			[
+				"orgindex",
+				"templates/html/org/org_index.html"
+			],
+			[
+				"org",
+				"org/org_utils.py"
+			],
+			[
+				"org/ur",
+				"org/urls.py"
+			],
+			[
+				"orgtagsu",
+				"templates/html/org/tags/users_frame.html"
+			],
+			[
+				"tag/uslist",
+				"templates/html/identities/tags/user_list.html"
+			],
+			[
+				"org_u",
+				"org/org_utils.py"
+			],
+			[
+				"org/vie",
+				"org/views.py"
+			],
+			[
+				"org/",
+				"org/__init__.py"
+			],
+			[
+				"jqminj",
+				"jquery.min.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/home/lotaku/app/sublimeProjects/htmlSamrtAdmin.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 269.0,
+	"status_bar_visible": true
+}
