@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="612c678a-dccd-4f28-aebd-0cc25944551d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hs_info/forms.py" afterPath="$PROJECT_DIR$/hs_info/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hs_info/models.py" afterPath="$PROJECT_DIR$/hs_info/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users_manage/models.py" afterPath="$PROJECT_DIR$/users_manage/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hushua/settings.py" afterPath="$PROJECT_DIR$/hushua/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hushua/urls.py" afterPath="$PROJECT_DIR$/hushua/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hs_info/views.py" afterPath="$PROJECT_DIR$/hs_info/views.py" />
     </list>
     <ignored path="hushua.iws" />
     <ignored path=".idea/workspace.xml" />
