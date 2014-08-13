@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'polls',
     'users_manage',
+    'hs_info',
 
     'south',
 )
