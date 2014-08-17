@@ -43,6 +43,17 @@
 
 	</head>
 	<body class="">
-		{{ form.as_p }}
+<form action="" method="post" class="content-form">
+{% csrf_token %}
+    <ul class="content-form-fields">
+        {{ form.as_ul  }}
+    </ul>
+    <div class="content-form-submit">
+        <input type="submit" name="save" value="Add task">
+	<input type="submit" name="cancel" value="Cancel" class="cancel" />
+    </div>
+</form>
+
+		 
 	</body>
 </html>

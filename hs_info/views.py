@@ -2,10 +2,22 @@
 from django.shortcuts import render,render_to_response
 from hs_info.forms import HsInfoForm
 from django.template import RequestContext
+from hs_info.models import HsInfo
 # Create your views here.
 def add_task(request):
 	if request.method == 'POST':
-		pass
+		form = HsInfoForm(request.POST)
+		if form.is_valid():
+			form.save()
+			print "%"*99
+			tasks=HsInfo.objects.all()
+			print tasks
+			return render_to_response('users_manage/user_all.html',
+									{'users':tasks },
+									 context_instance=RequestContext(request))
+			# return render_to_response('hs_info/add_task.html',
+			# {'form': form},
+			# context_instance=RequestContext(request),)
 	else:
 		form = HsInfoForm()
 
