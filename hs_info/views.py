@@ -4,6 +4,14 @@ from hs_info.forms import HsInfoForm
 from django.template import RequestContext
 from hs_info.models import HsInfo
 # Create your views here.
+
+
+def index(request):
+	return render_to_response('index.html',
+			{ },
+			 context_instance=RequestContext(request))	
+
+
 def add_task(request):
 	if request.method == 'POST':
 		form = HsInfoForm(request.POST)

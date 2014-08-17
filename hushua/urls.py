@@ -8,11 +8,11 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'hushua.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-
     url(r'^admin/', include(admin.site.urls)),
     url(r'^polls/', include('polls.urls', namespace='polls')),
     url(r'^users_manage/', include('users_manage.urls', namespace='users_manage')),
     url(r'^hs_info/', include('hs_info.urls', namespace='hs_info')),
+
    
 
 )
