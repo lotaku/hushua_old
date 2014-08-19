@@ -1,14 +1,60 @@
 # encoding: utf-8
 from django.shortcuts import render,render_to_response
-from hs_info.forms import HsInfoForm
 from django.template import RequestContext
+from django.core.paginator import Paginator
+from hs_info.forms import HsInfoForm
 from hs_info.models import HsInfo
 # Create your views here.
 
 
 def index(request):
-	return render_to_response('index.html',
-			{ },
+	page = 1
+	# page = request.GET.get('page', 1)
+
+	paginate_by = 1
+	task_list = HsInfo.objects.all()
+	paginator = Paginator(task_list, paginate_by)
+	page_obj = paginator.page(page)
+
+	# print page_obj
+	print "^&"*45
+	# print dir(Paginator.num_pages)
+	# previous_list
+	# for i in range(0, page_obj.page_)
+
+	num_pages = paginator.num_pages
+	pagination_list =[]
+	pagination_list.append(page)
+
+	i = 0
+	for _ in range(0,page):
+		i += 1 
+		page_num = page-i
+		if page_num >0:
+			pagination_list.insert(0,page_num)
+		else:
+			break
+		if i==5:
+			break
+	i = 0
+	for _ in range(page,num_pages):
+		i += 1 
+		page_num = page+i
+		if page_num <num_pages:
+			pagination_list.append(page_num)
+		else:
+			break
+		if i==5:
+			break
+	print pagination_list
+	context= {
+			'page_obj':page_obj,
+			'paginator': paginator,
+			'pagination_list': pagination_list,
+        		}
+
+
+	return render_to_response('index.html',context,
 			 context_instance=RequestContext(request))	
 
 
