@@ -14,6 +14,7 @@
     <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
     <!-- Bootstrap theme -->
     <link href="/static/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/static/bootstrap/css/docs.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="/static/bootstrap/css/theme.css" rel="stylesheet">
@@ -73,8 +74,55 @@
        
 
 
-      <div class="page-header">
-        <h1>Tables</h1>
+{#      <div class="page-header">#}
+{#        <h1>互刷区</h1>#}
+{#          <div class="alert alert-success" role="alert">互刷区</div>#}
+{#      </div>#}
+
+      <div class="panel panel-default">
+              <div class="panel-body" style="font-size: 14pt;">
+{#                 <div class="alert alert-success" role="alert">...</div>#}
+
+                  <span class="label label-info" style="font-size: 12pt;margin: 0px 10px 0px 0px;">任务编号:3421</span>
+                  <span class="label label-info" style="font-size: 12pt;margin: 0px 10px 0px 0px;">店铺类型（C店）</span>
+                  <span class="label label-info" style="font-size: 12pt;">城市行业（深圳童鞋）</span>
+                  <span class="label label-danger" style="font-size: 12pt;float: right;margin: 0px 10px 0px 0px;padding: 7px 5px;">联系QQ（212143121）</span>
+
+
+                <hr style="margin: 10px 0px;">
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">发布时间: </span>
+                  <span class="label label-primary" style="font-size: 12pt;">2014/8/22 15:50 </span>
+
+                <hr style="margin: 10px 0px;">
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">价格范围: </span>
+                  <span class="label label-primary" style="font-size: 12pt;">xx </span>
+                <hr style="margin: 10px 0px;">
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">基本要求: </span>
+                  <span class="label label-primary" style="font-size: 12pt;">周不过12 </span>&nbsp;&nbsp;
+                  <span class="label label-primary" style="font-size: 12pt;">月不过12 </span>&nbsp;&nbsp;
+                  <span class="label label-primary" style="font-size: 12pt;">卖家号：接受 </span>&nbsp;&nbsp;
+                  <span class="label label-primary" style="font-size: 12pt;">需要签收</span>&nbsp;&nbsp;
+                  <span class="label label-primary" style="font-size: 12pt;">需要假聊</span>&nbsp;&nbsp;
+                  <span class="label label-primary" style="font-size: 12pt;">信誉大于12 </span>&nbsp;&nbsp;
+
+                  <hr style="margin: 10px 0px;">
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">不刷事项: </span>
+                  <span class="label label-primary" style="font-size: 12pt;">月不过12 </span>
+                  <hr style="margin: 10px 0px;">
+
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">其他要求: </span>
+                  <span class="label label-primary" style="font-size: 12pt;">134~453元 </span>
+                  <div class="bs-callout bs-callout-info">
+ssd
+
+                  </div>
+
+
+
+
+              </div>
+              
+
       </div>
 
 
@@ -124,21 +172,24 @@
       </tbody>
 
     </table>
-<ul class="pagination">
-   {% if page_obj.has_previous %}
-  <li><a href="{{url_prefix}}?page={{page_obj.previous_page_number}}">上一页</a></li>
-  {% endif %}
-    {% for i in pagination_list %}
-           <li><a href="{{ i }}">{{ i }}</a></li>
-{% endfor %}
-{% if page_obj.has_next %}
-  <li><a href="{{url_prefix}}?page={{page_obj.next_page_number}}">下一页</a></li>
-  {% endif %}
+    <div style="width:580px;margin: 0 auto;" >
+        <ul class="pagination pager" >
+           {% if page_obj.has_previous %}
+          <li class="previous" ><a href="{{url_prefix}}?page={{page_obj.previous_page_number}}">上一页</a></li>
+          {%else%}
+          <li class="previous" ><a href="#">没有啦</a></li>
+          {% endif %}
+            {% for i in pagination_list %}
+                   <li ><a href="{% url 'hs_info:index' %}?page={{ i }}">{{ i }}</a></li>
+        {% endfor %}
+        {% if page_obj.has_next %}
+          <li class="next"><a href="{{url_prefix}}?page={{page_obj.next_page_number}}">下一页</a></li>
+          {%else%}
+          <li class="next" ><a href="#">没有啦</a></li>
+          {% endif %}
 
-
-  
- 
-</ul>      
+        </ul>
+    </div>
       
         </div>
 
