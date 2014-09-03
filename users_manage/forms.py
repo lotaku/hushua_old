@@ -38,5 +38,6 @@ class UserCreationForm(forms.ModelForm):
 		return user
 
 class UserAuthForm(AuthenticationForm):
-	email = forms.CharField()
-	password = forms.CharField( widget=forms.PasswordInput)
+	username = forms.CharField()
+	password = forms.PasswordInput()
+# widget=forms.PasswordInput

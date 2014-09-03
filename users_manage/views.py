@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response
+from django.contrib.auth import  login as django_login
+
 from django.shortcuts import get_object_or_404
 # Create your views here.
 from django.http import HttpResponseRedirect
@@ -29,12 +31,13 @@ def user_add(request):
 	if request.method == 'POST': 
 		
 		f = UserCreationForm(request.POST)
+		print f
 		
 		if f.is_valid(): 
 
 			email = f.cleaned_data['email']
 			password1 = f.cleaned_data['password1']
-			user = User.objects.create_user(email, password=password1)
+			user = User.objects.create_user(email, password=password1,email=email)
 			user.save()
 
 			
@@ -59,13 +62,18 @@ def user_add(request):
 def login(request):
 	users=MyUser.objects.all()
 	# print users
-	if request.method == 'POST': 		
-		f = UserCreationForm(request.POST)		
+	if request.method == 'POST':
+
+		f = UserAuthForm(request, data=request.POST)
+		# print f
 		if f.is_valid(): 
-			email = f.cleaned_data['email']
-			password = f.cleaned_data['password1']
-			user = authenticate(username=email, password=password)
-			print "^"*99
+			username = f.cleaned_data['username']
+			password = f.cleaned_data['password']
+			print "renz"*99
+			user = authenticate(username=username, password=password)
+			request.user = user
+			django_login(request,user)
+
 			if user is not None:
 				# the password verified for the user
 				if user.is_active:
@@ -80,8 +88,10 @@ def login(request):
 			 context_instance=RequestContext(request))
 		else:
 			# print dir(f)
-			print "@@"*99
-			print f.errors
+			print "^"*99
+			print f.error_messages
+			for m in f.error_messages:
+				print type(m)
 			return render_to_response('users_manage/user_all.html',
 			 		{'users':users },
  					context_instance=RequestContext(request))
@@ -89,7 +99,7 @@ def login(request):
 	else:
 		f = UserAuthForm() # An unbound form
 		# return render(request, 'users_manage/user_add.html', {'form':f, })
-		return render(request, 'users_manage/user_add.html', {'form':f, })
+		return render(request, 'users_manage/login.html', {'form':f })
 
 
 	

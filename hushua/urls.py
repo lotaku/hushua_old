@@ -12,6 +12,9 @@ urlpatterns = patterns('',
     url(r'^polls/', include('polls.urls', namespace='polls')),
     url(r'^users_manage/', include('users_manage.urls', namespace='users_manage')),
     url(r'^hs_info/', include('hs_info.urls', namespace='hs_info')),
+	url(r'^accounts/login/', include('users_manage.urls', namespace='users_manage')),
+
+
 
    
 

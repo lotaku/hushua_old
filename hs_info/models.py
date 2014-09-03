@@ -1,44 +1,66 @@
 # encoding: utf-8
 from django.db import models
 from users_manage.models import MyUser
+from django.contrib.auth.models import User
 
+import json
 # Create your models here.
 
-class  HsInfo(models.Model):
-	##任务发布人
-	user = models.ForeignKey(MyUser)
-	#小号要求
-	week_limited = models.IntegerField(max_length=256, null=True, blank=True) 
-	month_limited = models.IntegerField(max_length=256,null=True, blank=True)
-	#是否接受卖家号
+
+
+class HsInfo(models.Model):
+	# #任务发布人
+	user = models.ForeignKey(User)
+	# 小号要求
+	week_limited = models.IntegerField(max_length=256, null=True, blank=True)
+	month_limited = models.IntegerField(max_length=256, null=True, blank=True)
+	# 是否接受卖家号
 	is_seller = models.BooleanField()
-	#是否签收
+	# 是否签收
 	sign_required = models.BooleanField()
 	#店铺类型
-	shop_type = models.CharField(max_length=256,null=True, blank=True)
-	##信誉大于多少？通过表单定义多个字段给用户选择，models只保留最后结果
-	reputation_gt = models.CharField(max_length=256,null=True, blank=True) 
+	# shop_type_dict = (
+	# 	('天猫', '天猫'),
+	# 	('C店', 'C店'),
+	# )
+
+	shop_type = models.CharField(max_length=10, null=True, blank=True)
+	#信誉大于多少？通过表单定义多个字段给用户选择，models只保留最后结果
+	# reputation = (
+	# ('不做要求', '不做要求'),
+	# ('1心以上', '1心以上'),
+	# ('2心以上', '2心以上'),
+	# ('3心以上', '3心以上'),
+	# ('4心以上', '4心以上'),
+	# ('5心以上', '5心以上'),
+	# ('黄钻以上', '黄钻以上'),
+	# )
+	reputation_gt = models.CharField(max_length=100, null=True, blank=True)
+
 	#不刷信用卡等等
-	not_do = models.CharField(max_length=512,null=True, blank=True)
-	#城市-行业 , 
-	city_and_sector = models.CharField(max_length=128,null=True, blank=True)
-	#是否假聊 
-	chat_required = models.BooleanField()
+	not_do = models.CharField(max_length=512, null=True, blank=True)
+	#城市-行业 ,
+	city_and_sector = models.CharField(max_length=20, null=True, blank=True)
+	#是否假聊
+	chat_required = models.BooleanField(default=True)
 	#其他注意
-	other_info = models.CharField(max_length=512,null=True, blank=True)
+	other_info = models.CharField(max_length=512, null=True, blank=True)
 	#价格
-	min_payment = models.IntegerField(max_length=128) 
-	max_payment  = models.IntegerField(max_length=128) 
+	min_payment = models.IntegerField(max_length=128, default=1)
+	max_payment = models.IntegerField(max_length=128, default=999)
 
-	def __unicode__(self):
-		return str(self.shop_type)
+	#
+	# def save(self, *args, **kwargs):
+	# 	x = self.not_do
+	# 	# self.not_do = json.dumps(dict(self.cleaned_data['not_do']))
+	# 	super(HsInfo, self).save(*args, **kwargs)
+	#
+	# def set_not_do(self):
 
 
 
 
-
-
-
-	# name = models.CharField(max_length=100, null=True, blank=True)
-	# email = models.EmailField(max_length=100, null=True, blank=True)
-	# password = models.CharField(max_length=8, null=True, blank=True)
+class Notdo(models.Model):
+	# notdo_id = models.IntegerField(null=True, blank=True)
+	choice = models.CharField(max_length=100)
+	hsinfo = models.ForeignKey(HsInfo,null=True)

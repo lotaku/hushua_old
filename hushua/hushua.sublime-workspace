@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"list_",
+				"list_left"
+			],
+			[
 				"page",
 				"page_obj"
 			]
@@ -12,13 +16,10 @@
 	"buffers":
 	[
 		{
-			"contents": "<!DOCTYPE html>\n<html lang=\"en\"><head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">\n    <link rel=\"icon\" href=\"http://v3.bootcss.com/favicon.ico\">\n\n    <title>首页</title>\n    <link href=\"/static/hs.css\" rel=\"stylesheet\">\n    <!-- Bootstrap core CSS -->\n    <link href=\"/static/bootstrap/css/bootstrap.css\" rel=\"stylesheet\">\n    <!-- Bootstrap theme -->\n    <link href=\"/static/bootstrap/css/bootstrap-theme.css\" rel=\"stylesheet\">\n\n    <!-- Custom styles for this template -->\n    <link href=\"/static/bootstrap/css/theme.css\" rel=\"stylesheet\">\n\n\n\n\n    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->\n    <!--[if lt IE 9]>\n      <script src=\"https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js\"></script>\n      <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\n    <![endif]-->\n  <style type=\"text/css\" id=\"holderjs-style\"></style></head>\n\n  <body role=\"document\">\n\n    <!-- Fixed navbar -->\n    <div class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\">\n      <div class=\"container\">\n        <div class=\"navbar-header\">\n          <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">\n            <span class=\"sr-only\">Toggle navigation</span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n          </button>\n          <a class=\"navbar-brand\" href=\"#\">Bootstrap theme</a>\n        </div>\n        <div class=\"navbar-collapse collapse\">\n          <ul class=\"nav navbar-nav\">\n            <li class=\"active\"><a href=\"#\">Home</a></li>\n            <li><a href=\"#about\">About</a></li>\n            <li><a href=\"#contact\">Contact</a></li>\n            <li class=\"dropdown\">\n              <a aria-expanded=\"false\" href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Dropdown <span class=\"caret\"></span></a>\n              <ul class=\"dropdown-menu\" role=\"menu\">\n                <li><a href=\"#\">Action</a></li>\n                <li><a href=\"#\">Another action</a></li>\n                <li><a href=\"#\">Something else here</a></li>\n                <li class=\"divider\"></li>\n                <li class=\"dropdown-header\">Nav header</li>\n                <li><a href=\"#\">Separated link</a></li>\n                <li><a href=\"#\">One more separated link</a></li>\n              </ul>\n            </li>\n          </ul>\n        </div><!--/.nav-collapse -->\n      </div>\n    </div>\n\n    <div class=\"container theme-showcase\" role=\"main\">\n\n      \n\n\n\n       \n\n\n      <div class=\"page-header\">\n        <h1>Tables</h1>\n      </div>\n\n\n      <table class=\"table table-bordered text-center \">\n      <thead  >\n        <tr  >\n          <th class=\"text-center \" style=\"min-width:63px\">周不过</th>\n          <th class=\"text-center\" style=\"min-width:63px\" >月不过</th>\n          <th class=\"text-center\" style=\"min-width:63px\">卖家号</th>\n{#            接受/不接受#}\n          <th class=\"text-center\" style=\"min-width:42px\">签收</th>\n          <th class=\"text-center\" style=\"min-width:48px\">假聊</th>\n\n          <th class=\"text-center\" style=\"min-width:84px\">店铺类型</th>\n          <th class=\"text-center\" style=\"min-width:84px\">信誉大于</th>\n\n          <th class=\"text-center\" style=\"min-width:84px\">不刷的</th>\n            <th class=\"text-center\" style=\"min-width:84px\">城市行业</th>\n\n            <th class=\"text-center\" style=\"min-width:84px\" >最低价格</th>\n            <th class=\"text-center\" style=\"min-width:84px\">最高价格</th>\n\n            <th class=\"text-center\">其他</th>\n\n        </tr>\n      </thead>\n      <tbody>\n              {% for task in page_obj.object_list%}\n      \n      \n        <tr>\n          <td >{{ task.shop_type }}</td>\n          <td>觉得哦</td>\n          <td>Otto</td>\n          <td>@mdo</td>\n            <td >1</td>\n            <td >1</td>\n            <td >1</td>\n            <td >1</td>\n            <td >1</td>\n            <td >1</td>\n            <td >1</td>\n            <td >信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于信誉大于</td>\n\n        </tr>\n        {%endfor%}\n\n      </tbody>\n    </table>\n\n      \n        </div>\n\n\n\n       \n\n    <!-- Bootstrap core JavaScript\n    ================================================== -->\n    <!-- Placed at the end of the document so the pages load faster -->\n    <script src=\"/static/bootstrap/js/jquery.min.js\"></script>\n    <script src=\"/static/bootstrap/js/bootstrap.min.js\"></script>\n{#    <script src=\"/static/bootstrap/js/docs.min.js\"></script>#}\n\n    </body></html>",
 			"file": "/home/lotaku/app/envs/hushua/hushua/templates/index.html",
-			"file_size": 5136,
-			"file_write_time": 1408281097000000,
 			"settings":
 			{
-				"buffer_size": 4801,
+				"buffer_size": 5778,
 				"line_ending": "Unix"
 			}
 		},
@@ -26,15 +27,59 @@
 			"file": "/home/lotaku/app/envs/hushua/hushua/hs_info/views.py",
 			"settings":
 			{
-				"buffer_size": 2134,
+				"buffer_size": 2779,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/lotaku/app/envs/hushua/hushua/users_manage/urls.py",
+			"settings":
+			{
+				"buffer_size": 468,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/lotaku/app/envs/hushua/hushua/hs_info/urls.py",
+			"settings":
+			{
+				"buffer_size": 200,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "# -*- coding:utf-8 -*-\nfrom django import forms\nfrom django.utils.translation import ugettext as _\nfrom django.forms.extras.widgets import SelectDateWidget\nfrom hs_info.models import HsInfo\n\n\nREPUTATION = (\n	(u'1心','1心'),\n	(u'2心','2心'),\n	(u'3心','3心'),\n	(u'4心','4心'),\n	(u'5心','5心'),\n	(u'钻号','钻号')\n	)\n\n\nclass HsInfoForm(forms.ModelForm):\n	#不刷\n	xyk = u'信用卡'\n	NOT_DO_LIST = (\n		(xyk,u'信用卡'),\n		(u'360',u'360浏览器'),\n		(u'淘宝浏览器','淘宝浏览器'),\n		(u'代付', '代付'),\n		)\n	not_do = forms.MultipleChoiceField(choices=NOT_DO_LIST)\n\n	#店铺类型\n	SHOP_TYPE_DICT = (\n		(u'天猫', '天猫'),\n		(u'C店', 'C店'),\n	)\n	shop_type = forms.ChoiceField(choices=SHOP_TYPE_DICT)\n\n	#信誉大于\n	REPUTATION = (\n	(u'不做要求', '不做要求'),\n	(u'1心以上', '1心以上'),\n	(u'2心以上', '2心以上'),\n	(u'3心以上', '3心以上'),\n	(u'4心以上', '4心以上'),\n	(u'5心以上', '5心以上'),\n	(u'黄钻以上', '黄钻以上'),\n\n\n	)\n	reputation_gt = forms.ChoiceField(choices=REPUTATION)\n\n\n\n	def __init__(self, *args, **kwargs):\n		super(HsInfoForm, self).__init__(*args, **kwargs)\n		self.fields['reputation_gt'].label = u\"信誉大于\"\n		self.fields['shop_type'].label = u\"店铺类型\"\n		self.fields['sign_required'].label = u\"是否签收\"\n\n		\n		# self.fields['new_password'].label = _(\"New Password\")\n		# self.fields['new_password_again'].label = _(\"Confirm Password\")\n\n	class Meta:\n		model = HsInfo\n\n		# fields = ('user','week_limited', 'reputation_gt', 'shop_type')\n		# self.fields = fields	",
+			"file": "/home/lotaku/app/envs/hushua/hushua/hs_info/forms.py",
+			"file_size": 1560,
+			"file_write_time": 1409384323000000,
+			"settings":
+			{
+				"buffer_size": 1338,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/lotaku/app/envs/hushua/hushua/templates/users_manage/page.html",
+			"settings":
+			{
+				"buffer_size": 2994,
+				"line_ending": "Unix",
+				"name": "page.html"
 			}
 		},
 		{
 			"file": "/home/lotaku/app/envs/hushua/hushua/hs_info/models.py",
 			"settings":
 			{
-				"buffer_size": 1279,
+				"buffer_size": 1388,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/lotaku/app/envs/hushua/hushua/templates/hs_info/add_task.html",
+			"settings":
+			{
+				"buffer_size": 2976,
 				"line_ending": "Unix"
 			}
 		}
@@ -281,7 +326,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 150.0,
+		"height": 0.0,
 		"where_history":
 		[
 			""
@@ -292,6 +337,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"block",
+			"i",
+			"task_paged",
 			"task",
 			"eroClipboard",
 			"object",
@@ -374,7 +422,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -382,20 +430,20 @@
 					"file": "/home/lotaku/app/envs/hushua/hushua/templates/index.html",
 					"settings":
 					{
-						"buffer_size": 4801,
+						"buffer_size": 5778,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3928,
-								3928
+								5778,
+								5778
 							]
 						],
 						"settings":
 						{
-							"check_times": 2,
+							"check_times": 0,
 							"clone_numbers": 4,
 							"origin_encoding": "UTF-8",
 							"syntax": "Packages/HTML/HTML.tmLanguage",
@@ -403,7 +451,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3876.0,
+						"translation.y": 7068.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -413,15 +461,185 @@
 					"file": "/home/lotaku/app/envs/hushua/hushua/hs_info/views.py",
 					"settings":
 					{
-						"buffer_size": 2134,
+						"buffer_size": 2779,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								581,
-								581
+								1062,
+								1062
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/lotaku/app/envs/hushua/hushua/users_manage/urls.py",
+					"settings":
+					{
+						"buffer_size": 468,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/lotaku/app/envs/hushua/hushua/hs_info/urls.py",
+					"settings":
+					{
+						"buffer_size": 200,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								140,
+								140
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 0,
+					"file": "/home/lotaku/app/envs/hushua/hushua/templates/index.html",
+					"settings":
+					{
+						"buffer_size": 5778,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5754,
+								5754
+							]
+						],
+						"settings":
+						{
+							"clone_numbers": 4,
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3978.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/lotaku/app/envs/hushua/hushua/hs_info/forms.py",
+					"settings":
+					{
+						"buffer_size": 1338,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								396,
+								396
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 228.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/lotaku/app/envs/hushua/hushua/templates/users_manage/page.html",
+					"settings":
+					{
+						"buffer_size": 2994,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2971,
+								2971
+							]
+						],
+						"settings":
+						{
+							"auto_name": "page.html",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2166.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/lotaku/app/envs/hushua/hushua/hs_info/models.py",
+					"settings":
+					{
+						"buffer_size": 1388,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								849,
+								849
 							]
 						],
 						"settings":
@@ -437,65 +655,29 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/home/lotaku/app/envs/hushua/hushua/hs_info/models.py",
+					"buffer": 7,
+					"file": "/home/lotaku/app/envs/hushua/hushua/templates/hs_info/add_task.html",
 					"settings":
 					{
-						"buffer_size": 1279,
+						"buffer_size": 2976,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								207,
-								207
+								2936,
+								2936
 							]
 						],
 						"settings":
 						{
 							"origin_encoding": "ASCII",
-							"syntax": "Packages/Python/Python.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 0,
-					"file": "/home/lotaku/app/envs/hushua/hushua/templates/index.html",
-					"settings":
-					{
-						"buffer_size": 4801,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1135,
-								1135
-							]
-						],
-						"settings":
-						{
-							"clone_numbers": 4,
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 76.0,
+						"translation.y": 2622.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -520,18 +702,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.733030486573,
 			1.0
 		],
 		"rows":
@@ -555,6 +730,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"userurs",
+				"users_manage/urls.py"
+			],
 			[
 				"hsview",
 				"hs_info/views.py"
@@ -722,6 +901,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 120.0,
+	"side_bar_width": 172.0,
 	"status_bar_visible": true
 }

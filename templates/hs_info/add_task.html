@@ -1,48 +1,8 @@
-<!DOCTYPE html>
-<html lang="en-us">
-	<head>
-		<meta charset="utf-8">
-		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+{% extends "users_manage/page.html" %}
+{% block title %}发布任务{% endblock %}
 
-		<title> SmartAdmin </title>
-		<meta name="description" content="">
-		<meta name="author" content="">
-
-		<!-- Use the correct meta names below for your web application
-			 Ref: http://davidbcalhoun.com/2010/viewport-metatag 
-			 
-		<meta name="HandheldFriendly" content="True">
-		<meta name="MobileOptimized" content="320">-->
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<!-- Basic Styles -->
-		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/font-awesome.min.css">
-
-		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
-		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/smartadmin-production.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/smartadmin-skins.css">
-
-		<!-- SmartAdmin RTL Support is under construction
-		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/smartadmin-rtl.css"> -->
-
-		<!-- We recommend you use "your_style.css" to override SmartAdmin
-		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/your_style.css"> -->
-
-		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
-		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/demo.css">
-
-		<!-- FAVICONS -->
-		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
-
-		<!-- GOOGLE FONT -->
-		<link rel="stylesheet" href="http://fonts.useso.com/css?family=Open+Sans:400italic,700italic,300,400,700">
-
-	</head>
-	<body class="">
+		{% block taskshow%}
+<div class="container theme-showcase" role="main">
 <form action="" method="post" class="content-form">
 {% csrf_token %}
     <ul class="content-form-fields">
@@ -54,6 +14,111 @@
     </div>
 </form>
 
-		 
-	</body>
-</html>
+
+            <div class="panel panel-default">
+              <div class="panel-body" style="font-size: 14pt;">
+{#                 <div class="alert alert-success" role="alert">...</div>#}
+        		<form action="" method="post" class="content-form">
+                {% csrf_token %}
+                   <input id="id_user" type="hidden" name="user" value={{ user.id }}>
+
+                  <span class="label label-info" style="font-size: 12pt;margin: 0px 10px 0px 0px;">店铺类型</span>
+                  <select id="id_shop_type" name="shop_type">
+                    <option selected="selected" value="天猫">天猫</option>
+                    <option value="C店">C店</option>
+                   </select>
+                  <hr style="margin: 10px 0px;">
+                  <span class="label label-info" style="font-size: 12pt;">城市行业</span>
+                  <input id="id_city_and_sector" type="text" name="city_and_sector" maxlength="10">
+                  比如：深圳童鞋
+                  <hr style="margin: 10px 0px;">
+                  <span class="label label-danger" style="font-size: 12pt;float: right;margin: 0px 10px 0px 0px;padding: 7px 5px;">联系QQ（212143121）</span>
+
+
+                <hr style="margin: 10px 0px;">
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">周不超过: </span>
+                  <input id="id_week_limited" type="number" name="week_limited"  style="font-size: 12pt;">
+                <hr style="margin: 10px 0px;">
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">月不超过: </span>
+                  <input id="id_month_limited" type="number" name="month_limited"  style="font-size: 12pt;">
+                <hr style="margin: 10px 0px;">
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">接受卖家号: </span>
+                  <input id="id_is_seller" type="checkbox" name="is_seller">
+                <hr style="margin: 10px 0px;">
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">需要签收: </span>
+                  <input type="checkbox" name="sign_required" id="id_sign_required">
+                <hr style="margin: 10px 0px;">
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">需要假聊: </span>
+                   <input type="checkbox" name="chat_required" id="id_chat_required">
+                <hr style="margin: 10px 0px;">
+                  <div>
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">信誉大于: </span>
+
+                  <div class="radio radio-inline " style="font-size: 12pt;margin: 0px 10px 0px 0px;">
+                      {{ form.reputation_gt }}
+{#                      {% for reputation_gt in form.reputation_gt%}#}
+{#                          {{ reputation_gt }}#}
+{#                  <label>#}
+{#                    <input type="radio" name={{ reputation_gt.name }} id="optionsRadios1" value={{ reputation_gt.value }} checked>#}
+{#                    Option#}
+{#                  </label>#}
+{#                      {% endfor %}#}
+
+                </div>
+                <hr style="margin: 10px 0px;">
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">最低价格: </span>
+                  <input id="id_min_payment" type="number" name="min_payment">
+                      *指订单的最低成交价
+                <hr style="margin: 10px 0px;">
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">最高价格: </span>
+                   <input type="number" name="max_payment" id="id_max_payment">
+                      *指订单的最高成交价
+
+                  <hr style="margin: 10px 0px;">
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">不刷事项: </span>
+{#                      {{ form.not_do }}#}
+{#                      {% for choice in form.not_do.choices %}#}
+
+                      <label for=''>
+                            <input id="" type="checkbox" value="360浏览器" name="not_do">
+                            360浏览器
+                        </label>
+                      <label for=''>
+                            <input id="" type="checkbox" value="淘宝浏览器" name="not_do">
+                            淘宝浏览器
+                        </label>
+{#                      <input id="" type="text" value="淘宝浏览器" name="not_do">#}
+{#                      <select id="id_shop_type" name="not_do">#}
+{#                    <option selected="selected" value="天猫">天猫</option>#}
+{#                    <option value="C店">C店</option>#}
+{#                   </select>#}
+
+{#                      {% endfor %}#}
+
+                  <hr style="margin: 10px 0px;">
+
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">其他要求: </span>
+
+                      </br>
+                      <textarea id="id_other_info" rows="2" name="other_info" cols="40"></textarea>
+
+                  <div class="bs-callout bs-callout-info">
+                        ssd
+
+                  </div>
+              </div>
+                <div style="text-align: center">
+              <button type="submit" class="btn btn-primary btn-lg" name="save" value="add_task">发布任务</button>
+               <button type="submit" class="btn btn-default btn-lg " name="cancel" value="cancel">取消</button>
+</div>
+</form>
+
+      </div>
+
+		{% endblock %}
+
+</div>
+
+
+
+
