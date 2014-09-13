@@ -13,7 +13,19 @@ REPUTATION = (
 	(u'5心','5心'),
 	(u'钻号','钻号')
 	)
+class NotdoForm(forms.ModelForm):
+		#不刷
 
+	# NOT_DO_LIST = (
+	# 	('信用卡','信用卡'),
+	# 	('360浏览器','360浏览器'),
+	# 	('淘宝浏览器','淘宝浏览器'),
+	# 	('代付', '代付'),
+	# 	)
+	# LIST = ['信用卡', '360浏览器']
+	# not_do = forms.MultipleChoiceField(choices=NOT_DO_LIST)
+	class Meta:
+		model = Notdo
 
 class HsInfoForm(forms.ModelForm):
 	#user
@@ -21,17 +33,16 @@ class HsInfoForm(forms.ModelForm):
 
 	#不刷
 
-	NOT_DO_LIST = (
-		('信用卡','信用卡'),
-		('360浏览器','360浏览器'),
-		('淘宝浏览器','淘宝浏览器'),
-		('代付', '代付'),
-		)
-	LIST = ['信用卡', '360浏览器']
-	not_do = forms.MultipleChoiceField(choices=NOT_DO_LIST)
+	# NOT_DO_LIST = (
+	# 	('信用卡','信用卡'),
+	# 	('360浏览器','360浏览器'),
+	# 	('淘宝浏览器','淘宝浏览器'),
+	# 	('代付', '代付'),
+	# 	)
+	# LIST = ['信用卡', '360浏览器']
+	# not_do = forms.MultipleChoiceField(choices=NOT_DO_LIST)
 	#其他信息
 	other_info = forms.CharField(max_length=200,widget=forms.Textarea)
-
 
 	#店铺类型
 	SHOP_TYPE_DICT = (
@@ -61,7 +72,15 @@ class HsInfoForm(forms.ModelForm):
 		self.fields['reputation_gt'].label = u"信誉大于"
 		self.fields['shop_type'].label = u"店铺类型"
 		self.fields['sign_required'].label = u"是否签收"
+		# self.fields['not_dos'] = forms.CheckboxSelectMultiple() # 也是有效的
 
 
 	class Meta:
 		model = HsInfo
+		exclude = ['user']
+		widgets = {'not_dos': forms.CheckboxSelectMultiple,
+
+		}
+		labels = {
+			'shop_type': u"店铺类型",
+		}

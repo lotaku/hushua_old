@@ -3,10 +3,20 @@ from django.db import models
 from users_manage.models import MyUser
 from django.contrib.auth.models import User
 
+from django.contrib import admin
+from django.contrib.contenttypes.generic import GenericTabularInline
+
+# from myproject.myapp.models import Image, Product
 import json
 # Create your models here.
 
+class Notdo(models.Model):
+	choice = models.CharField(max_length=100)
+	# notdos = models.ManyToManyField(HsInfo,related_name='hsinfo_set')
+	# hsinfo = models.ForeignKey(HsInfo, null=True)
 
+	def __unicode__(self):
+		return unicode(self.choice)
 
 class HsInfo(models.Model):
 	# #任务发布人
@@ -38,9 +48,10 @@ class HsInfo(models.Model):
 	reputation_gt = models.CharField(max_length=100, null=True, blank=True)
 
 	#不刷信用卡等等
-	not_do = models.CharField(max_length=512, null=True, blank=True)
+	# not_do = models.NullBooleanField()
+	not_dos = models.ManyToManyField(Notdo)
 	#城市-行业 ,
-	city_and_sector = models.CharField(max_length=20, null=True, blank=True)
+	city_and_sector = models.CharField(max_length=8, null=True, blank=True)
 	#是否假聊
 	chat_required = models.BooleanField(default=True)
 	#其他注意
@@ -49,18 +60,8 @@ class HsInfo(models.Model):
 	min_payment = models.IntegerField(max_length=128, default=1)
 	max_payment = models.IntegerField(max_length=128, default=999)
 
-	#
-	# def save(self, *args, **kwargs):
-	# 	x = self.not_do
-	# 	# self.not_do = json.dumps(dict(self.cleaned_data['not_do']))
-	# 	super(HsInfo, self).save(*args, **kwargs)
-	#
-	# def set_not_do(self):
 
 
 
 
-class Notdo(models.Model):
-	# notdo_id = models.IntegerField(null=True, blank=True)
-	choice = models.CharField(max_length=100)
-	hsinfo = models.ForeignKey(HsInfo,null=True)
+

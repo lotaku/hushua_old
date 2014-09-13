@@ -3,9 +3,10 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, render_to_response
 from django.template import RequestContext
 from django.core.paginator import Paginator
-from hs_info.forms import HsInfoForm
-from hs_info.models import HsInfo
+from hs_info.forms import HsInfoForm,NotdoForm
+from hs_info.models import HsInfo,Notdo
 import json
+from django.forms.models import inlineformset_factory
 # Create your views here.
 
 
@@ -16,25 +17,6 @@ def index(request):
 	task_list = HsInfo.objects.all()
 	paginator = Paginator(task_list, paginate_by)
 	page_obj = paginator.page(page)
-	# a = u'\u4fe1\u7528\u5361'
-
-	# for t in page_obj.object_list:
-	#
-	# print t.not_do
-	# 	print u'360\u6d4f\u89c8\u5668'
-	# 	# l =t.not_do.replace('u\'','').replace('[','').replace(']','').replace('\'','')
-	# 	l = [i for i in t.not_do.strip('[]').strip('u\'').replace('\'','').split(',') ]
-	# 	# l=l[1:-1]
-	# 	# l[-1]
-	#
-	# 	# l = l.split(',')
-	# 	print l
-	# 	print type(l)
-	# 	b=l[0].replace('\\\\','\\')
-	# 	print b
-
-	# print a.encode('utf-8')
-	# print t.shop_type
 
 
 	num_pages = paginator.num_pages
@@ -56,14 +38,11 @@ def index(request):
 			if idx == 5:
 				break
 		left_len = 10 - len(list_right)
-		print left_len
+
 		left_len = 0 if left_len < 0 else left_len
 		list_left = [item for item in range(page - left_len, page)]
 		pagination_list = list_left + list_right
-		print pagination_list
-	for obj in page_obj:
-		print list(json.loads(obj.not_do))
-		# print x[1]
+
 	context = {
 		'page_obj': page_obj,
 		'paginator': paginator,
@@ -76,30 +55,21 @@ def index(request):
 
 @login_required
 def add_task(request):
+	# NotdoInlineFormSet = inlineformset_factory(HsInfo, Notdo, form=NotdoForm)
 	if request.method == 'POST':
-		# request.POST['not_do'] = json.dumps(request.POST['not_do'])
+
 		form = HsInfoForm(request.POST)
-		# for fs in request.POST['not_do']:
-		# 	print fs
-		form.not_do = json.dumps(request.POST['not_do'])
 
 		if form.is_valid():
-			# for fs in form.cleaned_data['not_do']:
-			# 	print fs
-			# list_new = [item.encode('utf-8') for item in form.cleaned_data['not_do'] ]
-			# list_test = ['谷歌', '百度']
-			# x = json.dumps(list_test)
-			# j = json.loads(x)
-			z = json.dumps(form.cleaned_data['not_do'])
-			j = json.loads(z)
 
-			form.not_do = json.dumps(form.cleaned_data['not_do'])
-			form.cleaned_data['not_do'] =json.dumps(form.cleaned_data['not_do'])
-
+			task = form.save(commit=False)
+			task.user = request.user
 			form.save()
-			# print form.cleaned_data
+
 
 			tasks = HsInfo.objects.all()
+			for t in tasks:
+				print t.not_dos.all()
 
 			return render_to_response('users_manage/user_all.html',
 									  {'users': tasks},
@@ -107,8 +77,8 @@ def add_task(request):
 
 	else:
 
+		# form = NotdoInlineFormSet()
 		form = HsInfoForm()
-
 	return render_to_response('hs_info/add_task.html',
 							  {'form': form,
 							   'user': request.user},

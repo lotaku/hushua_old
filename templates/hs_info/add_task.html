@@ -3,16 +3,16 @@
 
 		{% block taskshow%}
 <div class="container theme-showcase" role="main">
-<form action="" method="post" class="content-form">
-{% csrf_token %}
-    <ul class="content-form-fields">
-        {{ form.as_ul  }}
-    </ul>
-    <div class="content-form-submit">
-        <input type="submit" name="save" value="Add task">
-	<input type="submit" name="cancel" value="Cancel" class="cancel" />
-    </div>
-</form>
+{#<form action="" method="post" class="content-form">#}
+{#{% csrf_token %}#}
+{#    <ul class="content-form-fields">#}
+{#        {{ form.as_ul  }}#}
+{#    </ul>#}
+{#    <div class="content-form-submit">#}
+{#        <input type="submit" name="save" value="Add task">#}
+{#	<input type="submit" name="cancel" value="Cancel" class="cancel" />#}
+{#    </div>#}
+{#</form>#}
 
 
             <div class="panel panel-default">
@@ -29,7 +29,7 @@
                    </select>
                   <hr style="margin: 10px 0px;">
                   <span class="label label-info" style="font-size: 12pt;">城市行业</span>
-                  <input id="id_city_and_sector" type="text" name="city_and_sector" maxlength="10">
+                  <input id="id_city_and_sector" type="text" name="city_and_sector" maxlength="4">
                   比如：深圳童鞋
                   <hr style="margin: 10px 0px;">
                   <span class="label label-danger" style="font-size: 12pt;float: right;margin: 0px 10px 0px 0px;padding: 7px 5px;">联系QQ（212143121）</span>
@@ -76,24 +76,16 @@
 
                   <hr style="margin: 10px 0px;">
                   <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">不刷事项: </span>
-{#                      {{ form.not_do }}#}
-{#                      {% for choice in form.not_do.choices %}#}
+{#                      {{ form.not_dos }}#}
+
+                      {% for not_do in form.not_dos %}
 
                       <label for=''>
-                            <input id="" type="checkbox" value="360浏览器" name="not_do">
-                            360浏览器
-                        </label>
-                      <label for=''>
-                            <input id="" type="checkbox" value="淘宝浏览器" name="not_do">
-                            淘宝浏览器
-                        </label>
-{#                      <input id="" type="text" value="淘宝浏览器" name="not_do">#}
-{#                      <select id="id_shop_type" name="not_do">#}
-{#                    <option selected="selected" value="天猫">天猫</option>#}
-{#                    <option value="C店">C店</option>#}
-{#                   </select>#}
 
-{#                      {% endfor %}#}
+                            {{  not_do }}
+                        </label>
+                        {% endfor %}
+
 
                   <hr style="margin: 10px 0px;">
 

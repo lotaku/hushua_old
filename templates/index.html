@@ -92,11 +92,11 @@ ssd
           <td >{{ task.reputation_gt }}</td>
           <td >{{ task.city_and_sector }}</td>
           <td >
-{#              {{ task.not_do }}#}
+{#              {{ task.not_dos.all }}#}
 
-              {% for not_do in task.not_do %}
+              {% for not_do in task.not_dos.all %}
                   {{ not_do }},
-                  {% endfor %}
+              {% endfor %}
           </td>
           <td >{{ task.min_payment }}</td>
           <td >{{ task.max_payment }}</td>

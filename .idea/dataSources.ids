@@ -92,22 +92,26 @@
       <index name="django_session_b7b81f0c" unique="true" columns="expire_date"/>
     </table>
     <table name="hs_info_hsinfo" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="max_payment" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="reputation_gt" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="other_info" sqlType="VARCHAR(512)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="sign_required" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="week_limited" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="shop_type" sqlType="VARCHAR(10)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="city_and_sector" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="min_payment" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="month_limited" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
       <column name="is_seller" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="sign_required" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="shop_type" sqlType="VARCHAR(256)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="reputation_gt" sqlType="VARCHAR(256)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="not_do" sqlType="VARCHAR(512)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="city_and_sector" sqlType="VARCHAR(128)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
       <column name="chat_required" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="other_info" sqlType="VARCHAR(512)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="min_payment" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="max_payment" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
       <index name="hs_info_hsinfo_6340c63c" unique="true" columns="user_id"/>
+    </table>
+    <table name="hs_info_notdo" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="choice" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
     </table>
     <table name="polls_choice" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
