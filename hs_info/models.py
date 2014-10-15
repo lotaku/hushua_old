@@ -2,6 +2,7 @@
 from django.db import models
 from users_manage.models import MyUser
 from django.contrib.auth.models import User
+import datetime
 
 from django.contrib import admin
 from django.contrib.contenttypes.generic import GenericTabularInline
@@ -18,7 +19,14 @@ class Notdo(models.Model):
 	def __unicode__(self):
 		return unicode(self.choice)
 
+def publish_date():
+
+	dt = datetime.datetime.now().strftime("%Y-%m-%d")
+	return dt
+
 class HsInfo(models.Model):
+	#发布时间
+	publish_date = models.DateField(default=publish_date())
 	# #任务发布人
 	user = models.ForeignKey(User)
 	# 小号要求

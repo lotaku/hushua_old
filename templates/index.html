@@ -9,41 +9,68 @@
 {#          <div class="alert alert-success" role="alert">互刷区</div>#}
 {#      </div>#}
 
+    {% for task in page_obj.object_list%}
       <div class="panel panel-default">
               <div class="panel-body" style="font-size: 14pt;">
 {#                 <div class="alert alert-success" role="alert">...</div>#}
 
-                  <span class="label label-info" style="font-size: 12pt;margin: 0px 10px 0px 0px;">任务编号:3421</span>
-                  <span class="label label-info" style="font-size: 12pt;margin: 0px 10px 0px 0px;">店铺类型（C店）</span>
-                  <span class="label label-info" style="font-size: 12pt;">城市行业（深圳童鞋）</span>
+                  <span class="label label-info" style="font-size: 12pt;margin: 0px 10px 0px 0px;">任务编号:{{ task.id }}</span>
+                  <span class="label label-info" style="font-size: 12pt;margin: 0px 10px 0px 0px;">店铺类型（{{ task.shop_type }}）</span>
+                  <span class="label label-info" style="font-size: 12pt;">城市行业（{{ task.city_and_sector }}）</span>
+                  <span class="label label-info" style="font-size: 12pt;margin: 0px 10px 0px 0px;">发布时间 ({{ task.publish_date }})</span>
+
                   <span class="label label-danger" style="font-size: 12pt;float: right;margin: 0px 10px 0px 0px;padding: 7px 5px;">联系QQ（212143121）</span>
 
 
-                <hr style="margin: 10px 0px;">
-                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">发布时间: </span>
-                  <span class="label label-primary" style="font-size: 12pt;">2014/8/22 15:50 </span>
+{#                <hr style="margin: 10px 0px;">#}
+{#                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">发布时间: </span>#}
+{#                  <span class="label label-primary" style="font-size: 12pt;">2014/8/22 15:50 </span>#}
 
                 <hr style="margin: 10px 0px;">
                   <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">价格范围: </span>
-                  <span class="label label-primary" style="font-size: 12pt;">xx </span>
+                  <span class="label label-primary" style="font-size: 12pt;">{{ task.min_payment }}元 ~ {{ task.max_payment }}元 </span>
                 <hr style="margin: 10px 0px;">
                   <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">基本要求: </span>
-                  <span class="label label-primary" style="font-size: 12pt;">周不过12 </span>&nbsp;&nbsp;
-                  <span class="label label-primary" style="font-size: 12pt;">月不过12 </span>&nbsp;&nbsp;
-                  <span class="label label-primary" style="font-size: 12pt;">卖家号：接受 </span>&nbsp;&nbsp;
-                  <span class="label label-primary" style="font-size: 12pt;">需要签收</span>&nbsp;&nbsp;
-                  <span class="label label-primary" style="font-size: 12pt;">需要假聊</span>&nbsp;&nbsp;
-                  <span class="label label-primary" style="font-size: 12pt;">信誉大于12 </span>&nbsp;&nbsp;
+                  <span class="label label-primary" style="font-size: 12pt;">周不过{{ task.week_limited }} </span>&nbsp;&nbsp;
+                  <span class="label label-primary" style="font-size: 12pt;">月不过{{ task.month_limited}} </span>&nbsp;&nbsp;
+                  <span class="label label-primary" style="font-size: 12pt;">卖家号：
+                       {% if task.sign_required %}
+                           接受
+                       {% else %}
+                           不接受！
+                       {%  endif %}
+                  </span>&nbsp;&nbsp;
+                  <span class="label label-primary" style="font-size: 12pt;">
+                       {% if task.is_seller %}
+                           需要签收
+                       {% else %}
+                           不用签收
+                       {%  endif %}
+
+                  </span>&nbsp;&nbsp;
+                  <span class="label label-primary" style="font-size: 12pt;">
+                      {% if task.chat_required %}
+                           需要假聊
+                      {% else %}
+                           不用假聊
+                      {%  endif %}
+
+                  </span>&nbsp;&nbsp;
+                  <span class="label label-primary" style="font-size: 12pt;">店铺信誉{{ task.reputation_gt }} </span>&nbsp;&nbsp;
 
                   <hr style="margin: 10px 0px;">
                   <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">不刷事项: </span>
-                  <span class="label label-primary" style="font-size: 12pt;">月不过12 </span>
+                      {% for not_do in task.not_dos.all %}
+                           <span class="label label-primary" style="font-size: 12pt;margin: 0px 10px 0px 0px;">{{ not_do }} </span>
+
+                      {% endfor %}
+
                   <hr style="margin: 10px 0px;">
 
                   <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">其他要求: </span>
-                  <span class="label label-primary" style="font-size: 12pt;">134~453元 </span>
-                  <div class="bs-callout bs-callout-info">
-ssd
+
+                  <div class="bs-callout bs-callout-info" style="font-size: 12pt;margin: 0px 0px 0px 0px;">
+            <span style="font-size: 12pt;margin: 0px -5px 0px 0px;"  >{{ task.other_info }}</span>
 
                   </div>
 
@@ -54,60 +81,60 @@ ssd
               
 
       </div>
+    {% endfor %}
 
-
-      <table class="table table-bordered text-center ">
-      <thead  >
-        <tr  >
-          <th class="text-center " style="min-width:63px">周不过</th>
-          <th class="text-center" style="min-width:63px" >月不过</th>
-          <th class="text-center" style="min-width:63px">卖家号</th>
+{#      <table class="table table-bordered text-center ">#}
+{#      <thead  >#}
+{#        <tr  >#}
+{#          <th class="text-center " style="min-width:63px">周不过</th>#}
+{#          <th class="text-center" style="min-width:63px" >月不过</th>#}
+{#          <th class="text-center" style="min-width:63px">卖家号</th>#}
 {#            接受/不接受#}
-          <th class="text-center" style="min-width:42px">签收</th>
-          <th class="text-center" style="min-width:48px">假聊</th>
-
-          <th class="text-center" style="min-width:84px">店铺类型</th>
-          <th class="text-center" style="min-width:84px">信誉大于</th>
-
-            <th class="text-center" style="min-width:84px">城市行业</th>
-            <th class="text-center" style="min-width:84px">不刷的</th>
-
-
-            <th class="text-center" style="min-width:84px" >最低价格</th>
-            <th class="text-center" style="min-width:84px">最高价格</th>
-
-            <th class="text-center">其他</th>
-
-        </tr>
-      </thead>
-      <tbody>
-              {% for task in page_obj.object_list%}
-        <tr>
-          <td >{{ task.week_limited }}</td>
-          <td >{{ task.month_limited}}</td>
-          <td >{{ task.is_seller }}</td>
-          <td >{{ task.chat_required }}</td>
-          <td >{{ task.sign_required }}</td>
-          <td >{{ task.shop_type }}</td>
-          <td >{{ task.reputation_gt }}</td>
-          <td >{{ task.city_and_sector }}</td>
-          <td >
+{#          <th class="text-center" style="min-width:42px">签收</th>#}
+{#          <th class="text-center" style="min-width:48px">假聊</th>#}
+{##}
+{#          <th class="text-center" style="min-width:84px">店铺类型</th>#}
+{#          <th class="text-center" style="min-width:84px">信誉大于</th>#}
+{##}
+{#            <th class="text-center" style="min-width:84px">城市行业</th>#}
+{#            <th class="text-center" style="min-width:84px">不刷的</th>#}
+{##}
+{##}
+{#            <th class="text-center" style="min-width:84px" >最低价格</th>#}
+{#            <th class="text-center" style="min-width:84px">最高价格</th>#}
+{##}
+{#            <th class="text-center">其他</th>#}
+{##}
+{#        </tr>#}
+{#      </thead>#}
+{#      <tbody>#}
+{#              {% for task in page_obj.object_list%}#}
+{#        <tr>#}
+{#          <td >{{ task.week_limited }}</td>#}
+{#          <td >{{ task.month_limited}}</td>#}
+{#          <td >{{ task.is_seller }}</td>#}
+{#          <td >{{ task.chat_required }}</td>#}
+{#          <td >{{ task.sign_required }}</td>#}
+{#          <td >{{ task.shop_type }}</td>#}
+{#          <td >{{ task.reputation_gt }}</td>#}
+{#          <td >{{ task.city_and_sector }}</td>#}
+{#          <td >#}
 {#              {{ task.not_dos.all }}#}
-
-              {% for not_do in task.not_dos.all %}
-                  {{ not_do }},
-              {% endfor %}
-          </td>
-          <td >{{ task.min_payment }}</td>
-          <td >{{ task.max_payment }}</td>
-          <td >{{ task.other_info }}</td>
-          </tr>
-        {%endfor%}
-
-
-      </tbody>
-
-    </table>
+{##}
+{#              {% for not_do in task.not_dos.all %}#}
+{#                  {{ not_do }},#}
+{#              {% endfor %}#}
+{#          </td>#}
+{#          <td >{{ task.min_payment }}</td>#}
+{#          <td >{{ task.max_payment }}</td>#}
+{#          <td >{{ task.other_info }}</td>#}
+{#          </tr>#}
+{#        {%endfor%}#}
+{##}
+{##}
+{#      </tbody>#}
+{##}
+{#    </table>#}
     <div style="width:580px;margin: 0 auto;" >
         <ul class="pagination pager" >
            {% if page_obj.has_previous %}

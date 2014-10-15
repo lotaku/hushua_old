@@ -46,8 +46,9 @@ class HsInfoForm(forms.ModelForm):
 
 	#店铺类型
 	SHOP_TYPE_DICT = (
-		(u'天猫', '天猫'),
+
 		(u'C店', 'C店'),
+		(u'天猫', '天猫'),
 	)
 	shop_type = forms.ChoiceField(choices=SHOP_TYPE_DICT)
 
@@ -77,7 +78,7 @@ class HsInfoForm(forms.ModelForm):
 
 	class Meta:
 		model = HsInfo
-		exclude = ['user']
+		exclude = ['user','publish_date']
 		widgets = {'not_dos': forms.CheckboxSelectMultiple,
 
 		}

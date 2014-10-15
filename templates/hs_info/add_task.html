@@ -22,49 +22,36 @@
                 {% csrf_token %}
                    <input id="id_user" type="hidden" name="user" value={{ user.id }}>
 
-                  <span class="label label-info" style="font-size: 12pt;margin: 0px 10px 0px 0px;">店铺类型</span>
+                  <span class="label label-info" style="font-size: 12pt;margin: 0px 0px 0px 0px;">店铺类型</span>
                   <select id="id_shop_type" name="shop_type">
                     <option selected="selected" value="天猫">天猫</option>
                     <option value="C店">C店</option>
                    </select>
+{#                  <hr style="margin: 10px 0px;">#}
+                <span class="label label-info" style="font-size: 12pt;margin: 0px 0px 0px 30px;">信誉大于: </span>
+
+                  <div class="radio radio-inline " style="font-size: 12pt;margin: 0px 0px 0px -18px;">
+                      {{ form.reputation_gt }}
+
+                    </div>
+
                   <hr style="margin: 10px 0px;">
-                  <span class="label label-info" style="font-size: 12pt;">城市行业</span>
-                  <input id="id_city_and_sector" type="text" name="city_and_sector" maxlength="4">
+{#                  <span class="label label-danger" style="font-size: 12pt;float: right;margin: 0px 10px 0px 0px;padding: 7px 5px;">联系QQ（212143121）</span>#}
+
+                <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">城市行业:</span>
+                  <input id="id_city_and_sector" type="text" name="city_and_sector" maxlength="4" style="margin: 0px 0px 0px 0px;" >
                   比如：深圳童鞋
-                  <hr style="margin: 10px 0px;">
-                  <span class="label label-danger" style="font-size: 12pt;float: right;margin: 0px 10px 0px 0px;padding: 7px 5px;">联系QQ（212143121）</span>
-
-
                 <hr style="margin: 10px 0px;">
                   <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">周不超过: </span>
                   <input id="id_week_limited" type="number" name="week_limited"  style="font-size: 12pt;">
-                <hr style="margin: 10px 0px;">
-                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">月不超过: </span>
+{#                <hr style="margin: 10px 0px;">#}
+
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 20px;">月不超过: </span>
                   <input id="id_month_limited" type="number" name="month_limited"  style="font-size: 12pt;">
-                <hr style="margin: 10px 0px;">
-                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">接受卖家号: </span>
-                  <input id="id_is_seller" type="checkbox" name="is_seller">
-                <hr style="margin: 10px 0px;">
-                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">需要签收: </span>
-                  <input type="checkbox" name="sign_required" id="id_sign_required">
-                <hr style="margin: 10px 0px;">
-                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">需要假聊: </span>
-                   <input type="checkbox" name="chat_required" id="id_chat_required">
+
                 <hr style="margin: 10px 0px;">
                   <div>
-                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">信誉大于: </span>
 
-                  <div class="radio radio-inline " style="font-size: 12pt;margin: 0px 10px 0px 0px;">
-                      {{ form.reputation_gt }}
-{#                      {% for reputation_gt in form.reputation_gt%}#}
-{#                          {{ reputation_gt }}#}
-{#                  <label>#}
-{#                    <input type="radio" name={{ reputation_gt.name }} id="optionsRadios1" value={{ reputation_gt.value }} checked>#}
-{#                    Option#}
-{#                  </label>#}
-{#                      {% endfor %}#}
-
-                </div>
                 <hr style="margin: 10px 0px;">
                   <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">最低价格: </span>
                   <input id="id_min_payment" type="number" name="min_payment">
@@ -80,24 +67,33 @@
 
                       {% for not_do in form.not_dos %}
 
-                      <label for=''>
 
-                            {{  not_do }}
-                        </label>
+
+                            <span style="font-size: 14pt;margin: 0px 20px 0px 0px;">{{  not_do }} </span>
+
                         {% endfor %}
 
 
                   <hr style="margin: 10px 0px;">
 
-                  <span class="label label-success" style="font-size: 12pt;margin: 0px 10px 0px 0px;">其他要求: </span>
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 5px 0px 0px;">接受卖家号: </span>
+                  <input id="id_is_seller" type="checkbox" name="is_seller">
+{#                <hr style="margin: 10px 0px;">#}
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 5px 0px 20px;">需要签收: </span>
+                  <input type="checkbox" name="sign_required" id="id_sign_required">
+{#                <hr style="margin: 10px 0px;">#}
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 5px 0px 20px;">需要假聊: </span>
+                   <input type="checkbox" name="chat_required" id="id_chat_required">
+<hr style="margin: 10px 0px;">
+                  <span class="label label-success" style="font-size: 12pt;margin: 0px 5px 0px 0px;" >其他要求: </span>
 
                       </br>
-                      <textarea id="id_other_info" rows="2" name="other_info" cols="40"></textarea>
-
-                  <div class="bs-callout bs-callout-info">
-                        ssd
-
-                  </div>
+                      <textarea id="id_other_info" rows="2" name="other_info" cols="40" maxlength="30"></textarea>
+{#                    一种挺好的样式#}
+{#                  <div class="bs-callout bs-callout-info"> #}
+{#                        ssd#}
+{##}
+{#                  </div>#}
               </div>
                 <div style="text-align: center">
               <button type="submit" class="btn btn-primary btn-lg" name="save" value="add_task">发布任务</button>

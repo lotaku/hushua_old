@@ -1,58 +1,48 @@
+# -*- coding: UTF-8 –*-
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.contrib.auth import  login as django_login
 
 from django.shortcuts import get_object_or_404
 # Create your views here.
-from django.http import HttpResponseRedirect
-# from forms import UsersForm
+
 from django.template import RequestContext
-from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
-from django.views import generic
-from polls.models import Choice, Poll
-# from models import Users
 from users_manage.forms import UserCreationForm,UserAuthForm
 from users_manage.models import MyUser
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 # from django.contrib.auth.models import User
+from django.http import HttpResponse
+from django.utils import simplejson
+import json
 
-# class AddView(generic.ListView):
-#     template_name = 'users_manage/user_add.html'
-#     # context_object_name = 'latest_poll_list'
-#     def get_queryset(self):
-#     """Return the last five published polls."""
-#     return Poll.objects.order_by('-pub_date')[:5]
-def user_add(request):
+def render_json(data):
+	return HttpResponse(simplejson.dumps(data, ensure_ascii=False))
+
+def user_add(request,response_format = 'ajax'):
 	users=MyUser.objects.all()
-	# print users
-	print "^"*99
-	if request.method == 'POST': 
-		
+	if request.method == "POST" and request.is_ajax():
+		print "Right!"
 		f = UserCreationForm(request.POST)
-		print f
-		
-		if f.is_valid(): 
-
+		if f.is_valid():
 			email = f.cleaned_data['email']
 			password1 = f.cleaned_data['password1']
 			user = User.objects.create_user(email, password=password1,email=email)
 			user.save()
 
-			
-			# print "*"*99
-			# return render(request, 'users_manage/user_all.html', {'users':users })
-			
+			response_data = {}
+			response_data.update({'users':users,})
+
 			return render_to_response('users_manage/user_all.html',
-																	 {'users':users },
-																	 context_instance=RequestContext(request))
+									  json.dumps(response_data),
+									  context_instance=RequestContext(request))
 		else:
-			# print dir(f)
-			print f.errors
-			return render_to_response('users_manage/user_all.html',
-																	 {'users':users },
-																	 context_instance=RequestContext(request))
+			print "ougoeuogu"
+			response_data = json.dumps({'state': False,'errMsg':'错误信息'})
+
+			return HttpResponse(response_data,content_type='application/json')
+
+
 
 	else:
 		f = UserCreationForm() # An unbound form
@@ -61,21 +51,16 @@ def user_add(request):
 
 def login(request):
 	users=MyUser.objects.all()
-	# print users
 	if request.method == 'POST':
-
 		f = UserAuthForm(request, data=request.POST)
-		# print f
 		if f.is_valid(): 
 			username = f.cleaned_data['username']
 			password = f.cleaned_data['password']
-			print "renz"*99
 			user = authenticate(username=username, password=password)
 			request.user = user
 			django_login(request,user)
 
 			if user is not None:
-				# the password verified for the user
 				if user.is_active:
 					print("User is valid, active and authenticated")
 				else:
@@ -87,37 +72,26 @@ def login(request):
 			 {'users':users },
 			 context_instance=RequestContext(request))
 		else:
-			# print dir(f)
-			print "^"*99
 			print f.error_messages
 			for m in f.error_messages:
 				print type(m)
 			return render_to_response('users_manage/user_all.html',
 			 		{'users':users },
  					context_instance=RequestContext(request))
-
 	else:
 		f = UserAuthForm() # An unbound form
 		# return render(request, 'users_manage/user_add.html', {'form':f, })
 		return render(request, 'users_manage/login.html', {'form':f })
 
 
-	
+def ajax_test(request):
+	print request.is_ajax()
+	if request.method == "POST":
+		response_data = json.dumps({'state': True,'errMsg':'错误信息'})
+		print response_data
+		return HttpResponse(response_data,content_type='application/json')
 
-def two(request):
-		return render_to_response('users_manage/2.html',
-																	 {'users':'users' },
-																	 context_instance=RequestContext(request))
+	else:
+		print 'not ajax'
+		return render(request, 'test.html',{})
 
-def datatables(request): 
-		return render_to_response('users_manage/datatables.html',
-																	 {'users':'users' },
-																	 context_instance=RequestContext(request))
-def validation(request): 
-		return render_to_response('users_manage/validation.html',
-																	 {'users':'users' },
-																	 context_instance=RequestContext(request))
-def bootstrapForms(request): 
-		return render_to_response('users_manage/bootstrap-forms.html',
-																	 {'users':'users' },
-																	 context_instance=RequestContext(request))

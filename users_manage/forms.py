@@ -1,12 +1,4 @@
 from django import forms
-# class UsersForm(forms.ModelForm):
-# 	class Meta:
-# 		model = Users
-
-from django.contrib import admin
-from django.contrib.auth.models import Group
-from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.contrib.auth.forms import AuthenticationForm
 from users_manage.models import MyUser
 
